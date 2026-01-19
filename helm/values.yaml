@@ -1,0 +1,41 @@
+# 이미지 설정
+image:
+  repository: 
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+# 서비스 설정
+service:
+  type: ClusterIP
+  port: 3000
+  targetPort: 3000 # 컨테이너 내부 포트
+
+# 헬스 체크 설정
+livenessProbe:
+  httpGet:
+    path: /api/health
+    port: 3000
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+readinessProbe:
+  httpGet:
+    path: /api/health
+    port: 3000
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+# 여기에 MCP 서버 설정을 정의합니다.
+# 이 내용이 mcp-servers.json 으로 변환됩니다.
+mcpConfig:
+  mcpServers:
+    sequential-thinking:
+      command: "npx"
+      args:
+        - "-y"
+        - "@modelcontextprotocol/server-sequential-thinking"
+    context7:
+      command: "npx"
+      args:
+        - "-y"
+        - "@upstash/context7-mcp@latest"
