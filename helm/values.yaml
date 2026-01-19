@@ -39,3 +39,15 @@ mcpConfig:
       args:
         - "-y"
         - "@upstash/context7-mcp@latest"
+
+# 도메인 설정
+ingress:
+  enabled: true
+  ingressClassName: 
+  annotations:
+    kubernetes.io/ingress.class: 
+  hosts:
+    - 
+  paths:
+    - /
+  pathType: Prefix
