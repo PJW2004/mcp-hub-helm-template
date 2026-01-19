@@ -1,6 +1,6 @@
 # mcp-hub-helm-template
 > [!CAUTION]
-❗ **Work in Progress**: We are currently exploring ways to operate normally.
+**Work in Progress**: We are currently exploring ways to operate normally.
 
 ## Introduce
 <img src="./img/argo-example.png"/>
