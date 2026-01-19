@@ -5,12 +5,12 @@ This repository is designed to make it easy to distribute [link](https://github.
 ## Start
 ### Clone
 ```
-git clone https://github.com/ravitemer/mcp-hub.git mcp-hub
-cd mcp-hub
+git clone https://github.com/ravitemer/mcp-hub.git
+git clone https://github.com/PJW2004/mcp-hub-helm-template.git
 ```
 ### Build
 ```
-docker build -t container-registry-url/mcp-hub:latest .
+docker build --no-cache -t container-registry-url/mcp-hub:latest -f mcp-hub-helm-template/Dockerfile ./mcp-hub
 ```
 ### Deploy (Argo Cd)
 [example](./helm/values.yaml)
