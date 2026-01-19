@@ -21,3 +21,10 @@ docker push container-registry-url/mcp-hub:latest
 ```
 ### Deploy (Argo Cd)
 [example](./helm/values.yaml)
+### MCP Connect
+```powershell
+$HOME\$.local\bin\claude.exe mcp add --transport http mcphub http://server-url/mcp
+```
+```bash
+$HOME/$.local/bin/claude.exe mcp add --transport http mcphub http://server-url/mcp
+```
